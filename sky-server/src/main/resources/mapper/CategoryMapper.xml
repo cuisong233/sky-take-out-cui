@@ -5,4 +5,11 @@
 <mapper namespace="com.sky.mapper.CategoryMapper">
 
 
+    <select id="selectCatPage" resultType="com.sky.entity.Category">
+        select * from category
+        <where>
+            <if test="name != null"> and name like concat('%', #{name}, '%')</if>
+            <if test="name != null"> and type = #{type}</if>
+        </where>
+    </select>
 </mapper>
