@@ -31,5 +31,10 @@ public interface EmployeeMapper {
     @Update("update employee set status = #{status} where id = #{id}")
     void setStatusByID(int status, int id);
 
+    @Select("select * from employee where id = #{id}")
+    Employee selectEmpByID(Long id);
+
+    void updateEmpByID(Employee employee);
+
 //    Integer searchEmpPageTotal(EmployeePageQueryDTO employeePageQueryDTO);
 }
