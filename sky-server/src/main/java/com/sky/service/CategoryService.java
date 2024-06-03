@@ -10,4 +10,6 @@ public interface CategoryService {
     PageResult selectCatPage(CategoryPageQueryDTO categoryPageQueryDTO);
 
     void deleteByID(Long id);
+
+    void updateByID(CategoryDTO categoryDTO);
 }

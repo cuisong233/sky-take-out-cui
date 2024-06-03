@@ -18,4 +18,6 @@ public interface CategoryMapper {
 
     @Delete("delete from category where id = #{id}")
     void deleteByID(Long id);
+
+    void updateByID(Category category);
 }

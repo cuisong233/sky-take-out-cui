@@ -46,4 +46,12 @@ public class CategoryController {
         return Result.success();
     }
 
+    @ApiOperation("修改分类")
+    @PutMapping("/admin/category")
+    public Result<String> updateByID(@RequestBody CategoryDTO categoryDTO){
+
+        categoryService.updateByID(categoryDTO);
+
+        return Result.success();
+    }
 }
