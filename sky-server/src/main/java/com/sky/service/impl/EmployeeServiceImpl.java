@@ -103,4 +103,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         return new PageResult(page.getTotal(), page.getResult());
     }
 
+    @Override
+    public void startOrStop(int status, int id) {
+        // 在Mapper中操作
+        employeeMapper.setStatusByID(status, id);
+    }
+
 }
