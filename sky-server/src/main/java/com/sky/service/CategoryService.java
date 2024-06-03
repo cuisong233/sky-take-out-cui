@@ -8,4 +8,6 @@ public interface CategoryService {
     void insertCategory(CategoryDTO categoryDTO);
 
     PageResult selectCatPage(CategoryPageQueryDTO categoryPageQueryDTO);
+
+    void deleteByID(Long id);
 }

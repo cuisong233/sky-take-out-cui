@@ -9,9 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
@@ -23,7 +21,7 @@ public class CategoryController {
 
     @ApiOperation("新增分类")
     @PostMapping("/admin/category")
-    public Result<String> insertCategory(CategoryDTO categoryDTO){
+    public Result<String> insertCategory(@RequestBody CategoryDTO categoryDTO){
 
         categoryService.insertCategory(categoryDTO);
 
@@ -37,6 +35,15 @@ public class CategoryController {
         PageResult pageResult = categoryService.selectCatPage(categoryPageQueryDTO);
 
         return Result.success(pageResult);
+    }
+
+    @ApiOperation("根据ID删除分类")
+    @DeleteMapping("/admin/category")
+    public Result<String> deleteByID(Long id){
+
+        categoryService.deleteByID(id);
+
+        return Result.success();
     }
 
 }

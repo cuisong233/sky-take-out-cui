@@ -48,4 +48,11 @@ public class CategoryServiceImpl implements CategoryService {
 
         return new PageResult(page.getTotal(), page.getResult());
     }
+
+    @Override
+    public void deleteByID(Long id) {
+
+        categoryMapper.deleteByID(id);
+
+    }
 }
